@@ -318,7 +318,7 @@ extern "C" {
 #define SYMBOL_STRING(name) #name
 /* code (r4), RegisterFile* (r5), CallFrame* (r6), JSValue* exception (r7), Profiler**(sp), JSGlobalData (sp)*/
 
-asm volatile (
+asm (
 ".text\n"
 ".globl " SYMBOL_STRING(ctiTrampoline) "\n"
 HIDE_SYMBOL(ctiTrampoline) "\n"
@@ -349,7 +349,7 @@ SYMBOL_STRING(ctiTrampoline) ":" "\n"
     "nop" "\n"
 );
 
-asm volatile (
+asm (
 ".globl " SYMBOL_STRING(ctiVMThrowTrampoline) "\n"
 HIDE_SYMBOL(ctiVMThrowTrampoline) "\n"
 SYMBOL_STRING(ctiVMThrowTrampoline) ":" "\n"
@@ -372,7 +372,7 @@ SYMBOL_STRING(ctiVMThrowTrampoline) ":" "\n"
     ".L2" SYMBOL_STRING(cti_vm_throw)":.long " SYMBOL_STRING(cti_vm_throw) "@GOT \n"
 );
 
-asm volatile (
+asm (
 ".globl " SYMBOL_STRING(ctiOpThrowNotCaught) "\n"
 HIDE_SYMBOL(ctiOpThrowNotCaught) "\n"
 SYMBOL_STRING(ctiOpThrowNotCaught) ":" "\n"
@@ -1233,7 +1233,7 @@ MSVC_END(    END)
     extern "C" { \
         rtype JITStubThunked_##op(STUB_ARGS_DECLARATION); \
     }; \
-    asm volatile( \
+    asm ( \
     ".align 2" "\n" \
     ".globl " SYMBOL_STRING(cti_##op) "\n" \
     SYMBOL_STRING(cti_##op) ":" "\n" \
