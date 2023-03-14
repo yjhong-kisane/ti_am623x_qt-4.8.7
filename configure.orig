@@ -2812,9 +2812,6 @@ if [ "$CFG_EMBEDDED" != "no" ]; then
             *86_64)
                 PLATFORM=qws/linux-x86_64-g++
                 ;;
-            aarch64)
-                PLATFORM=linux-g++-aarch64
-                ;;
             *)
                 PLATFORM=qws/linux-generic-g++
                 ;;
@@ -3259,12 +3256,6 @@ if [ -z "${CFG_HOST_ARCH}" ]; then
             echo "    ARM (arm)"
         fi
         CFG_HOST_ARCH=arm
-	;;
-    *:*:aarch64*)
-        if [ "$OPT_VERBOSE" = "yes" ]; then
-            echo "    AArch64 (aarch64)"
-        fi
-        CFG_HOST_ARCH=aarch64
         ;;
     Linux:*:sparc*)
         if [ "$OPT_VERBOSE" = "yes" ]; then

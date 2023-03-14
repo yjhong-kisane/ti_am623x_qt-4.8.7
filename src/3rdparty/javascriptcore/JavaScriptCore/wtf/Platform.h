@@ -234,6 +234,11 @@
 
 #endif
 
+/* CPU(AARCH64) - AArch64 */
+#if defined(__aarch64__)
+#define WTF_CPU_AARCH64 1
+#endif
+
 #define WTF_ARM_ARCH_AT_LEAST(N) (CPU(ARM) && WTF_ARM_ARCH_VERSION >= N)
 
 /* Set WTF_ARM_ARCH_VERSION */
