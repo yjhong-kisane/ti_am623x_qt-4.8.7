@@ -2,6 +2,9 @@
 
 
 ## 64비트 아키택처 지원 패치 적용 (aarch64)
+
+(참고) https://bugreports.qt.io/browse/QTBUG-35442
+
 ```bash
 $ patch -p1 < qt4-aarch64.patch
 ```
@@ -65,5 +68,16 @@ export QT_QPA_PLATFORM=LinuxFB
 #export POINTERCAL_FILE="/etc/pointercal"
 export LD_LIBRATY_PATH=$QTDIR/lib:$QTDIR/lib/fonts:$LD_LIBRARY_PATH
 
+```
+
+
+## 빌드 절차 (aarch64)
+```bash
+./configure -prefix /opt/qt4.8.7 -release -embedded aarch64 -xplatform qws/linux-arm-gnueabi-g++ -opensource -no-largefile -little-endian -exceptions -qt-freetype -no-qt3support -qt-mouse-linuxtp -qt-mouse-tslib -qt-gfx-transformed -qt-gfx-vnc -qt-gfx-linuxfb -qt-gfx-multiscreen -no-nis -no-cups -depths 16,24,32 -no-mmx -no-3dnow -no-sse -no-sse2 -no-glib -no-accessibility -plugin-sql-sqlite3 -no-openssl -no-gtkstyle -fast -no-pch
+```
+
+```bash
+make -j4
+sudo make install -j4
 ```
 
