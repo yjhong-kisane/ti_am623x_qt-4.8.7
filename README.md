@@ -66,7 +66,7 @@ export QWS_MOUSE_PROTO="Tslib:${TSLIB_TSDEVICE}"
 #export QT_QPA_GENERIC_PLUGINS=$QWS_MOUSE_PROTO
 export QT_QPA_PLATFORM=LinuxFB
 #export POINTERCAL_FILE="/etc/pointercal"
-export LD_LIBRATY_PATH=$QTDIR/lib:$QTDIR/lib/fonts:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$QTDIR/lib:$QTDIR/lib/fonts:$LD_LIBRARY_PATH
 
 ```
 
@@ -82,6 +82,13 @@ export LD_LIBRATY_PATH=$QTDIR/lib:$QTDIR/lib/fonts:$LD_LIBRARY_PATH
 make -j4
 sudo make install
 ```
+
+
+## 추가 폰트 복사 (Qt_Fonts.tar.gz)
+```bash
+$ tar -xvzf Qt_Fonts.tar.gz -C /opt/qt-4.8.7/lib/fonts
+```
+
 
 ## configure 결과
 ```bash
