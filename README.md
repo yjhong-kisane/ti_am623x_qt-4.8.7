@@ -76,8 +76,80 @@ export LD_LIBRATY_PATH=$QTDIR/lib:$QTDIR/lib/fonts:$LD_LIBRARY_PATH
 ./configure -prefix /opt/qt4.8.7 -release -embedded aarch64 -xplatform qws/linux-arm-gnueabi-g++ -opensource -no-largefile -little-endian -exceptions -qt-freetype -no-qt3support -qt-mouse-linuxtp -qt-mouse-tslib -qt-gfx-transformed -qt-gfx-vnc -qt-gfx-linuxfb -qt-gfx-multiscreen -no-nis -no-cups -depths 16,24,32 -no-mmx -no-3dnow -no-sse -no-sse2 -no-glib -no-accessibility -plugin-sql-sqlite3 -no-openssl -no-gtkstyle -fast -no-pch
 ```
 
+(참고) make 에 약 20분 소요
+
 ```bash
 make -j4
-sudo make install -j4
+sudo make install
+```
+
+## configure 결과
+```bash
+Building on:   qws/linux-x86_64-g++
+Building for:  qws/linux-arm-gnueabi-g++
+Architecture:  aarch64
+Host architecture: x86_64
+
+Build .................. libs examples demos docs translations
+Configuration ..........  cross_compile release embedded stl  minimal-config small-config medium-config large-config full-config no-pkg-config shared embedded reduce_exports ipv6 clock-gettime clock-monotonic mremap getaddrinfo ipv6ifname getifaddrs inotify png freetype zlib concurrent multimedia audio-backend svg script scripttools declarative release
+Debug .................. no
+Qt 3 compatibility ..... no
+QtDBus module .......... no
+QtConcurrent code ...... yes
+QtGui module ........... yes
+QtScript module ........ yes
+QtScriptTools module ... yes
+QtXmlPatterns module ... no
+Phonon module .......... no
+Multimedia module ...... auto
+SVG module ............. yes
+WebKit module .......... no
+JavaScriptCore JIT ..... To be decided by JavaScriptCore
+Declarative module ..... yes
+Declarative debugging ...yes
+Support for S60 ........ no
+Symbian DEF files ...... no
+STL support ............ yes
+PCH support ............ no
+MMX/3DNOW/SSE/SSE2/SSE3. no/no/no/no/no
+SSSE3/SSE4.1/SSE4.2..... no/no/no
+AVX..................... no
+IPv6 support ........... yes
+IPv6 ifname support .... yes
+getaddrinfo support .... yes
+getifaddrs support ..... yes
+Accessibility .......... no
+NIS support ............ no
+CUPS support ........... no
+Iconv support .......... no
+Glib support ........... no
+GStreamer support ...... no
+PulseAudio support ..... no
+Large File support ..... no
+GIF support ............ plugin
+TIFF support ........... plugin (qt)
+JPEG support ........... plugin (qt)
+PNG support ............ yes (qt)
+MNG support ............ plugin (qt)
+zlib support ........... yes
+Session management ..... no
+Embedded support ....... aarch64
+Freetype2 support ...... yes
+Graphics (qt) .......... linuxfb multiscreen transformed vnc linuxfb multiscreen
+Graphics (plugin) ...... 
+Decorations (qt) ....... styled windows default
+Decorations (plugin) ... 
+Keyboard driver (qt) ... tty
+Keyboard driver (plugin) .. 
+Mouse driver (qt) ...... pc linuxtp linuxtp tslib
+Mouse driver (plugin) .. 
+OpenGL support ......... no
+OpenVG support ......... no
+SQLite support ......... plugin (qt)
+OpenSSL support ........ no 
+Alsa support ........... no
+ICD support ............ no
+libICU support ......... no
+Use system proxies ..... no
 ```
 
